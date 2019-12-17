@@ -13,6 +13,7 @@ import io.swagger.v3.oas.annotations.info.*;
 public class Application {
 
     public static void main(String[] args) {
+        System.getProperties().setProperty("org.jooq.no-logo", "true");
         Micronaut.run(Application.class);
     }
 }

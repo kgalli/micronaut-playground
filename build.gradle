@@ -32,11 +32,14 @@ dependencies {
     implementation "io.micronaut:micronaut-runtime"
     implementation "io.swagger.core.v3:swagger-annotations"
     implementation "io.micronaut:micronaut-http-client"
-    implementation "io.micronaut.configuration:micronaut-jdbc-hikari"
     implementation "io.micronaut:micronaut-http-server-netty"
     implementation "javax.annotation:javax.annotation-api"
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
-    runtimeOnly "com.h2database:h2"
+
+    implementation "io.micronaut.configuration:micronaut-jdbc-hikari"
+    compile 'io.micronaut.configuration:micronaut-jooq'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
+
     testAnnotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
     testAnnotationProcessor "io.micronaut:micronaut-inject-java"
     testImplementation platform("io.micronaut:micronaut-bom:$micronautVersion")
